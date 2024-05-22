@@ -43,9 +43,16 @@
                     <img src="@item.Imagen" style="width: 180px" />
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    <a asp-controller="Coches" asp-action="Details"
+                       asp-route-id="@item.IdCoche" class="btn btn-outline-info">
+                        Details
+                    </a>
+                    <a asp-controller="Coches"
+                       asp-action="SeleccionarFavorito"
+                       asp-route-idcoche="@item. IdCoche"
+                       class="btn btn-primary">
+                        Seleccionar favorito
+                    </a>
             </td>
         </tr>
 }
